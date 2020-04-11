@@ -6,7 +6,7 @@ if __name__ == "__main__":
     data = pd.read_csv("input/train.csv")
     data['kfold'] = -1
 
-    data = data.sample(frac=1).reset_index(drop=False)
+    data = data.sample(frac=1).reset_index(drop=True)
 
     kf = model_selection.StratifiedKFold(n_splits=5, shuffle=False, random_state=42)
 
